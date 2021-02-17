@@ -1,7 +1,199 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-body {
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Roboto", sans-serif;
+  background: hsl(210, 36%, 96%);
+}
+
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.title {
+  margin-bottom: 25px;
+}
+
+.title h2 {
+  position: relative;
+}
+
+.title h2::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  bottom: 0;
+  width: 60%;
+  height: 3px;
+  transform: translateY(-20%);
+  background: var(--clr-primary-5);
+}
+
+.img-container {
+  width: 450px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: var(--light-shadow);
+  display: grid;
+  place-items: center;
+}
+
+.img-container:hover {
+  box-shadow: var(--dark-shadow);
+}
+
+img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.img-container h3,
+.img-container .job {
+  font-size: 18px;
+  color: var(--clr-black);
+}
+
+.img-container h3 {
+  letter-spacing: 2px;
+}
+
+.img-container .job {
+  letter-spacing: 0;
+  color: var(--clr-primary-5);
+  margin-bottom: 15px;
+}
+
+.img-container p {
+  text-align: center;
+  font-size: 14px;
+  color: var(--clr-black);
+}
+
+.prev,
+.next {
+  margin: 15px 10px 0 10px;
+  border: none;
+  background: #fff;
+  color: var(--clr-primary-5);
+  font-size: 21px;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-surprise {
+  margin-top: 0.5rem;
+  background: var(--clr-primary-10);
+  color: var(--clr-primary-5);
+  padding: 0.25rem 0.5rem;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-surprise:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-1);
+}
+
+@media (max-width: 500px) {
+  .img-container {
+    width: 350px;
+  }
+}
+
+@media (max-width: 375px) {
+  .img-container {
+    width: 300px;
+  }
 }
